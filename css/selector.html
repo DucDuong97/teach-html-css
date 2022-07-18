@@ -1,0 +1,140 @@
+<html lang="en">
+<head>
+    <title>Selector</title>
+
+    <style>
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: content-box;
+        }
+
+        .container {
+            padding: 20px;
+            margin: 20px;
+            background-color: #3330E4;
+            color: #fff;
+        }
+        .container h2 {
+            color: #FBB454;
+        }
+
+        .text {
+            font-size: 20px;
+        }
+        .text::before {
+            content: '# ';
+        }
+
+        h3 {
+            color: #F637EC;
+        }
+
+        #text-1 {
+            color: #F637EC;
+        }
+
+        .container-3 .foo.bar {
+            /* color: #F637EC; */
+        }
+
+        .tab:hover {
+            color: #F637EC;
+        }
+
+        .container-4 .foo.bar {
+            color: #F637EC;
+        }
+
+        .container-6 .foo > .bar {
+            /* border: 1px solid #000; */
+            /* color: #F637EC; */
+        }
+
+        .container-7 .foo + .bar {
+            color: #F637EC;
+        }
+    </style>
+</head>
+<body>
+    <h1>Selectors</h1>
+    
+    <div class="container selector-id">
+        <h2>1. Elements</h2>
+        <p  class="text">This is a paragraph</p>
+        <h3 class="text">This is a heading 3</h3>
+    </div>
+    
+    <div class="container">
+        <h2>2. Id</h2>
+        <div id="text-1" class="text">ID Text 1</div>
+        <div id="text-2" class="text">ID Text 2</div>
+    </div>
+    
+    <div class="container container-3">
+        <h2>3. Class</h2>
+        <div class="text foo">foo</div>
+        <div class="text bar">bar</div>
+        <div class="text foo bar">foo & bar</div>
+    </div>
+        
+    <div class="container container-4">
+        <h2>4. .class1.class2</h2>
+        <div class="text foo bar">foo & bar together</div>
+        <div class="foo">
+            <div class="text bar">
+                foo is <i>parent</i> of bar
+            </div>
+        </div>
+        <br>
+        <div class='tab'>tab 1</div>
+        <div class='tab active'>tab 2</div>
+        <div class='tab'>tab 3</div>
+    </div>
+    
+    
+    <div class="container container-5">
+        <h2>5. .class1 .class2</h2>
+        <div class="text foo bar">foo & bar together</div>
+        <div class="foo">
+            <div class="text bar">
+                foo is <i>parent</i> of bar
+                <div class="text bar">
+                    foo is <i>descendent</i> of bar
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="container container-6">
+        <h2>6. .class1 > .class2</h2>
+        <div class="text foo bar">foo & bar together</div>
+        <div class="foo">
+            <div class="text bar">
+                foo is <i>parent</i> of bar
+                <div class="text bar">
+                    foo is <i>descendent</i> of bar
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="container container-7">
+        <h2>7. .class1 + .class2</h2>
+        <div class="text foo">foo</div>
+        <div class="text bar">bar</div>
+        <div class="text bar">bar</div>
+    </div>
+    
+
+    <div class="container">
+        <h2>8. .class1 ~ .class2</h2>
+        <div class="text foo">foo</div>
+        <div class="text bar">bar</div>
+        <div class="text baz">baz</div>
+    </div>
+</b ody>
+</html>
